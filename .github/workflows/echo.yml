@@ -1,3 +1,5 @@
+name: Hello World Action
+
 on:
   push:
   branches: [ main ]
