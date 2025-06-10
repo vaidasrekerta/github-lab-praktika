@@ -18,9 +18,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy EC2
         run: |
-          set -e
           aws cloudformation deploy \
             --template-file infra/cloudformation/ec2-instance.yaml \
             --stack-name devops-github-ec2-stack \
             --capabilities CAPABILITY_NAMED_IAM
-            --no-fail-on-empty-changeset
