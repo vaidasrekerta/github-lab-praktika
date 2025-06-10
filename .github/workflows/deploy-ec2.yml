@@ -22,4 +22,3 @@ jobs:
             --template-file infra/cloudformation/ec2-instance.yaml \
             --stack-name devops-github-ec2-stack \
             --capabilities CAPABILITY_NAMED_IAM
-
