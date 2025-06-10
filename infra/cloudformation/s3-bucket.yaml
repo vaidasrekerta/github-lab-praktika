@@ -11,5 +11,5 @@ Resources:
 Outputs:
  BucketName:
    Value: !Ref DevOpsBucket
-   Description: Name of the S3 bucket
+   Description: S3_bucket
 
