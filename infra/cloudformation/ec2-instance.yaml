@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Free Tier EC2 Instance for DevOps Lab
+Resources:
+ DevOpsEC2Role:
+   Type: AWS::IAM::Role
+   Properties:
+     AssumeRolePolicyDocument:
+       Version: '2012-10-17'
+       Statement:
+         - Effect: Allow
+           Principal:
+             Service: ec2.amazonaws.com
+           Action: sts:AssumeRole
+     ManagedPolicyArns:
+       - arn:aws:iam::aws:policy/AmazonS3FullAccess
+
+
+ DevOpsInstanceProfile:
+   Type: AWS::IAM::InstanceProfile
+   Properties:
+     Roles:
+       - !Ref DevOpsEC2Role
+DevOpsEC2Instance:
+   Type: AWS::EC2::Instance
+   Properties:
+     InstanceType: t2.micro
+     ImageId: ami-03400c3b73b5086e9  # Pakeiskite į naujausią Amazon Linux 2 AMI eu-west-1 regione
+     IamInstanceProfile: !Ref DevOpsInstanceProfile
+     KeyName: DevOpsDemoKey
+     SecurityGroupIds:
+       - sg-0f821ad020f492486  # Iš anksto sukurta SG, leidžianti SSH
+     SubnetId: subnet-079c1d945b8a83ba9  # Iš anksto sukurto potinklio ID
+     Tags:
+       - Key: Name
+         Value: DevOps-GitHub-EC2
+SecurityGroupIds:
+       - sg-0f821ad020f492486
+
