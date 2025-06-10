@@ -19,7 +19,7 @@ Resources:
    Properties:
      Roles:
        - !Ref DevOpsEC2Role
-DevOpsEC2Instance:
+ DevOpsEC2Instance:
    Type: AWS::EC2::Instance
    Properties:
      InstanceType: t2.micro
@@ -32,6 +32,6 @@ DevOpsEC2Instance:
      Tags:
        - Key: Name
          Value: DevOps-GitHub-EC2
-SecurityGroupIds:
+ SecurityGroupIds:
        - sg-0f821ad020f492486
 
