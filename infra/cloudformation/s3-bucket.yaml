@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Free Tier S3 Bucket for DevOps Lab
+Resources:
+ DevOpsBucket:
+   Type: AWS::S3::Bucket
+   Properties:
+     BucketName: !Sub devops-github-bucket-${AWS::AccountId}
+     AccessControl: Private
+     VersioningConfiguration:
+       Status: Enabled
+Outputs:
+ BucketName:
+   Value: !Ref DevOpsBucket
+   Description: Name of the S3 bucket
+
