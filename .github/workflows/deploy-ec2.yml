@@ -1,4 +1,4 @@
- name: Deploy EC2 via CloudFormation
+name: Deploy EC2 via CloudFormation
 
 on:
   push:
