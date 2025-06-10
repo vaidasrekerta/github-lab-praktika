@@ -33,5 +33,5 @@ Resources:
        - Key: Name
          Value: DevOps-GitHub-EC2
  SecurityGroupIds:
-       - sg-0f821ad020f492486
+   - sg-0f821ad020f492486
 
